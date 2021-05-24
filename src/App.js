@@ -2,11 +2,10 @@ import './App.css';
 import React, { Component } from 'react'
 import Hero from './sections/hero/Hero.js'
 import ServicesOne from './sections/services/ServicesOne.js'
-import TestimonialsOne from './sections/testimonials/TestimonialsOne.js'
-import TeamOne from './sections/team/TeamOne.js'
 import ContactCreative from './sections/contact/ContactCreative.js'
 import AboutOne from './sections/about/AboutOne';
 import Layout from './components/layout';
+import Contribute from './sections/contribute'
 
 class App extends Component {
 
@@ -16,13 +15,12 @@ class App extends Component {
       <div className="App">
         <Layout
           isHome={true}
-          sections={['home', 'token', 'features', 'roadmap', 'how to buy', 'contact']}
+          sections={['home', 'token', 'contribute', 'features', 'contact']}
         >
           <Hero />
           <AboutOne />
+          <Contribute />
           <ServicesOne />
-          <TestimonialsOne />
-          <TeamOne />
           <ContactCreative />
         </Layout>
       </div >

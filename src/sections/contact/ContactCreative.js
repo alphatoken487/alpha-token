@@ -1,8 +1,8 @@
 import React from 'react'
 import { Row, Col, Container } from 'react-bootstrap'
 import styled from 'styled-components'
-import AnimationContainer from "../../components/animation-container";
 import ContactCreativeForm from './parts/ContactCreativeForm.js'
+import AnimatedHeading from '../../components/animated-heading';
 
 class ContactCreative extends React.Component {
 
@@ -99,74 +99,19 @@ class ContactCreative extends React.Component {
         return (
             <Section id="contact">
                 <Container>
-                    <AnimationContainer animation="fadeIn">
-                        <FormRow>
-                            <ContactCol md={6}>
-                                <ContactCreativeForm />
-                            </ContactCol>
-                            <ContactCol md={6}>
-                                <Map
-                                    title="map"
-                                    src="https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" />
-                            </ContactCol>
-                        </FormRow>
-                    </AnimationContainer>
-                    <IconRow>
-                        <IconCol md={4}>
-                            <AnimationContainer animation="fadeIn" delay={500}>
-                                <InfoPart>
-                                    <IconContainer>
-                                    </IconContainer>
-                                    <Info>
-                                        <InfoTitle>
-                                            Email
-                              </InfoTitle>
-                                        <InfoLinkContainer>
-                                            <InfoLink href="mailto:email@yoursite.com">
-                                                email@yoursite.com
-                                </InfoLink>
-                                        </InfoLinkContainer>
-                                    </Info>
-                                </InfoPart>
-                            </AnimationContainer>
-                        </IconCol>
-                        <IconCol md={4}>
-                            <AnimationContainer animation="fadeIn" delay={1000}>
-                                <InfoPart>
-                                    <IconContainer>
-                                    </IconContainer>
-                                    <Info>
-                                        <InfoTitle>
-                                            Phone
-                              </InfoTitle>
-                                        <InfoLinkContainer>
-                                            <InfoLink href="tel:+(123)123-1234">
-                                                (123) 456-7890
-                                </InfoLink>
-                                        </InfoLinkContainer>
-                                    </Info>
-                                </InfoPart>
-                            </AnimationContainer>
-                        </IconCol>
-                        <IconCol md={4}>
-                            <AnimationContainer animation="fadeIn" delay={1500}>
-                                <InfoPart>
-                                    <IconContainer>
-                                    </IconContainer>
-                                    <Info>
-                                        <InfoTitle>
-                                            Address
-                              </InfoTitle>
-                                        <InfoLinkContainer>
-                                            <InfoLink target="_blank" href="https://maps.google.com/maps?ll=53.343244,-6.259338&z=14&t=m&hl=en&gl=US&mapclient=embed&q=1%20Grafton%20Street%20Dublin%20Ireland">
-                                                1 Grafton Street Dublin Ireland
-                                </InfoLink>
-                                        </InfoLinkContainer>
-                                    </Info>
-                                </InfoPart>
-                            </AnimationContainer>
-                        </IconCol>
-                    </IconRow>
+                    <Col md={12}>
+                        <AnimatedHeading text="Contact Us" />
+                    </Col>
+                    <FormRow>
+                        <ContactCol md={6}>
+                            <ContactCreativeForm />
+                        </ContactCol>
+                        <ContactCol md={6}>
+                            <Map
+                                title="map"
+                                src="https://maps.google.com/maps?width=500&amp;height=500&amp;hl=en&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" />
+                        </ContactCol>
+                    </FormRow>
                 </Container>
             </Section>
         )

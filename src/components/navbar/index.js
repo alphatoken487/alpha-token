@@ -9,22 +9,14 @@ import ico from '../../ethereum/ico'
 var scrollToElement = require('scroll-to-element')
 
 class Navbar extends React.Component {
-
     constructor(props) {
         super(props)
         this.state = {
             collapse: false,
             sticky: false,
-            sections: this.props.sections ? this.props.sections : ['home', 'token', 'features', 'roadmap', 'how to buy', 'contact']
+            sections: this.props.sections ? this.props.sections : ['home', 'token', 'contribute', 'features', 'contact']
         }
     }
-
-    state = {
-        myBalance: '',
-        myEther: '',
-        myAddress: ''
-    }
-
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, { passive: true })
@@ -70,19 +62,26 @@ class Navbar extends React.Component {
 
     async componentDidMount() {
 
-        let accounts = await web3.eth.getAccounts();
 
-        let myBalance = await ico.methods.myBalance().call({ from: accounts[0] });
-        myBalance = web3.utils.fromWei(myBalance, 'ether');
+        try {
+            let accounts = await web3.eth.getAccounts();
 
-        let myBalanceEther = await web3.eth.getBalance(accounts[0]);
-        myBalanceEther = web3.utils.fromWei(myBalanceEther, 'ether');
-        let myEther = myBalanceEther;
+            let myBalance = await ico.methods.myBalance().call({ from: accounts[0] });
+            myBalance = web3.utils.fromWei(myBalance, 'ether');
 
-        let myAddress = await ico.methods.myAddress().call({ from: accounts[0] });
+            let myBalanceEther = await web3.eth.getBalance(accounts[0]);
+            myBalanceEther = web3.utils.fromWei(myBalanceEther, 'ether');
+            let myEther = myBalanceEther;
 
-        this.setState({ myBalance, myEther, myAddress });
+            let myAddress = await ico.methods.myAddress().call({ from: accounts[0] });
+
+            this.setState({ myBalance, myEther, myAddress });
+        } catch (err) {
+            console.log("metamask isn't installed");
+        }
+
     }
+
 
     render() {
 
@@ -131,8 +130,8 @@ class Navbar extends React.Component {
         `
 
         const LogoWrapper = styled.div`
-            flex: 0 0 20%;
-            max-width: 20%;
+            flex: 0 0 10%;
+            max-width: 10%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -147,12 +146,6 @@ class Navbar extends React.Component {
                 color: #fff;
                 font-weight: 700;
                 text-transform: uppercase;
-                background: -webkit-linear-gradient(left,#00ffff ,#007a7a);
-                background: -o-linear-gradient(right,#00ffff,#007a7a);
-                background: -moz-linear-gradient(right,#00ffff,#007a7a);
-                background: linear-gradient(to right,#00ffff ,#007a7a);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
         `
 
@@ -165,6 +158,9 @@ class Navbar extends React.Component {
 
         const NavInner = styled.div`
             justify-content: flex-end;
+            .navbar-nav {
+                margin: 0 auto;
+            }
         `
 
         const Toggler = styled.button`
@@ -176,6 +172,69 @@ class Navbar extends React.Component {
                 display: none;
             }
         `
+
+
+
+
+        const ActionBtn = styled.span`
+        flex: 0 0 10%;
+        max-width: 10%;
+        display: grid !important;
+        align-items: center;
+        font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+        right: 100px !important;
+        width: auto;
+        height: 70px;
+        z-index: 700;
+        font-size: 12px;
+        line-height: 18px;
+        color: #2b3942;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    
+        .adress {
+            align-items: center;
+            display: flex;
+    
+            .adressText {
+                width: 150px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: white;
+    
+            }
+    
+            svg {
+                margin-right: .6rem;
+            }
+        }
+    
+        .eth {
+                align-items: center;
+                display: flex;
+                color: white;
+    
+                svg {
+                    margin-right: .6rem;
+                }
+        }
+    
+        .alpha {
+            align-items: center;
+            display: flex;
+            color: white;
+    
+            svg {
+                margin-right: .6rem;
+            }
+    }
+`
+
+
 
 
         return (
@@ -195,11 +254,40 @@ class Navbar extends React.Component {
                             <div className="navbar-nav">{this.navItems()}</div>
                         </NavInner>
                     </Nav>
-                    <div class="myAccountBox">
-                        <div class="address">{"Address: " + this.state.myAddress}</div>
-                        <div class="eth">{"My Ether: " + this.state.myEther}</div>
-                        <div class="dctoken">{"My DC: " + this.state.myBalance}</div>
-                    </div>
+                    <ActionBtn className="vrT">
+                        <div className="adress">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                                <g id="Gruppe_152" data-name="Gruppe 152" transform="translate(-85 -84)">
+                                    <circle id="Ellipse_94" data-name="Ellipse 94" cx="8.5" cy="8.5" r="8.5" transform="translate(85 84)" fill="#2b3942" />
+                                    <path id="Icon_awesome-user-alt" data-name="Icon awesome-user-alt" d="M5.084,5.72a2.86,2.86,0,1,0-2.86-2.86A2.861,2.861,0,0,0,5.084,5.72Zm2.542.636H6.532a3.457,3.457,0,0,1-2.9,0H2.542A2.542,2.542,0,0,0,0,8.9v.318a.954.954,0,0,0,.953.953H9.215a.954.954,0,0,0,.953-.953V8.9A2.542,2.542,0,0,0,7.626,6.355Z" transform="translate(88.416 86.876)" fill="aqua" />
+                                </g>
+                            </svg>
+
+
+                            <span className="adressText">{"Address: " + this.state.myAddress}</span>
+                        </div>
+                        <div className="eth">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+                                <g id="Gruppe_150" data-name="Gruppe 150" transform="translate(-85 -61)">
+                                    <circle id="Ellipse_93" data-name="Ellipse 93" cx="8.5" cy="8.5" r="8.5" transform="translate(85 61)" fill="#2b3942" />
+                                    <path id="Icon_awesome-ethereum" data-name="Icon awesome-ethereum" d="M8.376,6.706,4.471,9.092.563,6.706,4.471,0ZM4.471,9.858.563,7.472l3.908,5.693L8.379,7.472Z" transform="translate(89.029 62.918)" fill="aqua" />
+                                </g>
+                            </svg>
+
+                            {"My Ether: " + this.state.myEther}
+                        </div>
+                        <div className="alpha">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18">
+                                <g id="Gruppe_151" data-name="Gruppe 151" transform="translate(-85 -83)">
+                                    <circle id="Ellipse_94" data-name="Ellipse 94" cx="8.5" cy="8.5" r="8.5" transform="translate(85 84)" fill="#2b3942" />
+                                    <text id="A" transform="translate(94 97)" fill="aqua" font-size="14" font-family="LucidaGrande, Lucida Grande"><tspan x="-4.83" y="0">A</tspan></text>
+                                </g>
+                            </svg>
+
+
+                            {"My Alpha: " + this.state.myBalance}
+                        </div>
+                    </ActionBtn>
                 </NavbarContainer>
             </NavbarWrapper>
         )
