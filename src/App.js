@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react'
+import Hero from './sections/hero/Hero.js'
+import ServicesOne from './sections/services/ServicesOne.js'
+import TestimonialsOne from './sections/testimonials/TestimonialsOne.js'
+import TeamOne from './sections/team/TeamOne.js'
+import ContactCreative from './sections/contact/ContactCreative.js'
+import AboutOne from './sections/about/AboutOne';
+import Layout from './components/layout';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+
+  render() {
+
+    return (
+      <div className="App">
+        <Layout
+          isHome={true}
+          sections={['home', 'token', 'features', 'roadmap', 'how to buy', 'contact']}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <Hero />
+          <AboutOne />
+          <ServicesOne />
+          <TestimonialsOne />
+          <TeamOne />
+          <ContactCreative />
+        </Layout>
+      </div >
+    );
+  }
 }
 
 export default App;
