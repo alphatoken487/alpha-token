@@ -198,6 +198,10 @@ class Navbar extends React.Component {
         text-transform: uppercase;
         padding-left: 1rem;
         padding-right: 1rem;
+
+        @media (max-width: 500px) {
+                display: none !important;
+            }
     
         .adress {
             align-items: center;
@@ -235,7 +239,9 @@ class Navbar extends React.Component {
             svg {
                 margin-right: .6rem;
             }
+
     }
+
 `
 
 

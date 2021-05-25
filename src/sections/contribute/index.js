@@ -7,8 +7,6 @@ import web3 from '../../web3';
 import ico from '../../ethereum/ico';
 import AnimatedHeading from '../../components/animated-heading'
 
-
-
 const Wrapper = styled.div`
 padding: 100px 0;
 padding-bottom: 0px;
@@ -19,6 +17,10 @@ padding-bottom: 0px;
     margin-bottom: 80px;
     margin-top:20px;
     padding:20px;
+    @media (max-width: 500px) {
+        width: 300px !important;
+
+    }
   }
   .buyCoins {
     margin: 0 auto;
@@ -178,6 +180,38 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-contained
     padding-right: 2rem;
 }
 
+
+@media (max-width: 500px) {
+   
+
+.jvCTkj .contributeContainer {
+    width: 300px;
+   
+}
+
+.headerTime {
+    font-size: 60px !important;
+}
+
+.buyCoins {
+    display: grid !important;
+    grid-gap: 1rem;
+}
+
+.flex.successfully {
+    width: 250px;
+    font-size: 12px;
+}
+
+.flex.errorMessage {
+    width: 200px;
+}
+
+.flex.errorMessage {
+    width: 250px !important;
+    font-size: 12px !important;
+}
+}
 `
 
 class Contribute extends Component {
