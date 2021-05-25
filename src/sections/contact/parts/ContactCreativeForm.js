@@ -12,6 +12,28 @@ class ContactOneForm extends React.Component {
             error: false
         }
     }
+
+    formSubmit() {
+        if (this.state.name === "" || this.state.email === "" || this.state.message === "") {
+            this.setState({ error: true })
+        } else {
+            this.setState({ error: false })
+        }
+        this.forceUpdate()
+    }
+
+    check(val) {
+        if (this.state.error && val === "") {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return false;
+    }
+
     render() {
 
 
@@ -24,7 +46,7 @@ class ContactOneForm extends React.Component {
             margin-left: 6px;
         `
 
-        const ContactForm = styled.form`
+        const ContactForm = styled.div`
             padding: 40px;
             width: 100%;
         `
@@ -35,7 +57,7 @@ class ContactOneForm extends React.Component {
             color: #fff;
         `
 
-        const InputElement = styled.label`
+        const InputElement = styled.div`
             margin: 20px 0;
         `
 
@@ -123,24 +145,24 @@ class ContactOneForm extends React.Component {
         `
 
         return (
-            <ContactForm name="contact" method="POST" data-netlify="true">
+            <ContactForm netlify>
                 <Heading>
                     Get In Touch
               </Heading>
                 <Separator />
                 <InputElement>
-                    <Input type="email" className="name" placeholder="Name" />
+                    <Input type="text" defaultValue={this.state.name} className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({ name: e.target.value })} />
                 </InputElement>
                 <InputElement>
-                    <Input type="text" className="email" placeholder="Email" />
+                    <Input type="text" defaultValue={this.state.email} className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" onChange={e => this.setState({ email: e.target.value })} />
                 </InputElement>
                 <InputElement>
-                    <Input type="text" className="phone" placeholder="Phone" />
+                    <Input type="text" defaultValue={this.state.phone} className="phone" placeholder="Phone" onChange={e => this.setState({ phone: e.target.value })} />
                 </InputElement>
                 <InputElement>
-                    <Textarea tpye="text" placeholder="Message" />
+                    <Textarea placeholder="Message" defaultValue={this.state.message} className={`message ${this.check(this.state.message) ? "" : "error"}`} onChange={e => this.setState({ message: e.target.value })} />
                 </InputElement>
-                <Submit type="submit">
+                <Submit onClick={() => this.formSubmit()}>
                     <span>
                         Submit
                 </span>
