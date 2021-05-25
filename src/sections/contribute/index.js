@@ -272,7 +272,6 @@ class Contribute extends Component {
                     {this.state.statusError ? (
 
                         <div class="flex errorMessage">
-                            <i class="material-icons">error_outline</i>
                             <div >{this.state.errorMessage}</div>
                         </div>
                     ) : null}

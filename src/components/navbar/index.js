@@ -141,6 +141,10 @@ class Navbar extends React.Component {
                 justify-content: center;
             }
 
+            b {
+                color: #00fafa;
+            }
+
             span.logoEdit {
                 font-size: 27px;
                 color: #fff;
@@ -241,7 +245,7 @@ class Navbar extends React.Component {
             <NavbarWrapper className={`header${this.state.sticky === true ? ' sticky' : ''}`}>
                 <NavbarContainer>
                     <LogoWrapper className="logo">
-                        <span className="logoEdit">Alpha</span>
+                        <span className="logoEdit"><b>A</b>lpha</span>
                     </LogoWrapper>
                     <Toggler
                         onClick={() => this.collapseNav()}
@@ -313,7 +317,7 @@ class Navbar extends React.Component {
             color: #fff;
             text-transform: capitalize;
             font-weight: 500;
-            margin: 10px 5px;
+            margin: 10px 10px;
             transition: .5s;
             &:hover {
                 color: #04e5e5;

@@ -228,9 +228,9 @@ class Hero extends React.Component {
                                 <Typewriter
                                     options={{
                                         strings: [
-                                            'App Developers',
-                                            'Web Designers',
-                                            'UX Designers',
+                                            'For Traders',
+                                            'Institutions',
+                                            'And DAPPS',
                                         ],
                                         autoStart: true,
                                         loop: true,
@@ -266,9 +266,7 @@ class Hero extends React.Component {
                                         <ServiceHeading>Original Supply</ServiceHeading>
                                         <ServiceSeparator />
                                         <ServiceText>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae ultricies lacus, vitae varius velit.
-                                            Pellentesque blandit libero eu turpis condimentum bibendum.
-                                                </ServiceText>
+                                            Alpha 1.0 is our first ERC20 token that allows users to hold millions or even billions of them. We started developing the $AP tokens in the beginning of 2021.                                                </ServiceText>
                                     </ServiceContent>
                                 </Service>
                             </ServiceCol>
@@ -294,8 +292,7 @@ class Hero extends React.Component {
                                         <ServiceHeading>Fair Sale</ServiceHeading>
                                         <ServiceSeparator />
                                         <ServiceText>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae ultricies lacus, vitae varius velit.
-                                            Pellentesque blandit libero eu turpis condimentum bibendum.
+                                            On Alpha’s 1.0 decentralized application you’re able to contribute to our first fair token sale. With Alpha, users experience increased liquidity and participation.
                                                 </ServiceText>
                                     </ServiceContent>
                                 </Service>
@@ -321,9 +318,7 @@ class Hero extends React.Component {
                                         <ServiceHeading>Community Involvement</ServiceHeading>
                                         <ServiceSeparator />
                                         <ServiceText>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vitae ultricies lacus, vitae varius velit.
-                                            Pellentesque blandit libero eu turpis condimentum bibendum.
-                                                </ServiceText>
+                                            Our power is in community and as a community we can help each other to develop a new decentralized platform where community is „ALPHA“.                                                </ServiceText>
                                     </ServiceContent>
                                 </Service>
                             </ServiceCol>
