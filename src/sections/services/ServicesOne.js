@@ -112,13 +112,13 @@ class ServicesOne extends React.Component {
                                     <ServiceSeparator />
                                     <ServiceList>
                                         <ServiceListElement>
-                                            Lorem ipsum dolor sit amet
+                                            Distributed and decentralized ledger
                                                 </ServiceListElement>
                                         <ServiceListElement>
-                                            In vitae ultricies lacus vitae
+                                            $AP decentralized financial systems
                                                 </ServiceListElement>
                                         <ServiceListElement>
-                                            Pellentesque blandit libero
+                                            Commitment to decentralization
                                                 </ServiceListElement>
                                     </ServiceList>
                                 </ServiceElement>
@@ -145,13 +145,13 @@ class ServicesOne extends React.Component {
                                     <ServiceSeparator />
                                     <ServiceList>
                                         <ServiceListElement>
-                                            Lorem ipsum dolor sit amet
+                                            Anyone can purchase $AP tokens
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            In vitae ultricies lacus vitae
+                                            Receive a 25% bonus in our pre-sale
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            Pellentesque blandit libero
+                                            Community managment is on us
                                             </ServiceListElement>
                                     </ServiceList>
                                 </ServiceElement>
@@ -178,13 +178,13 @@ class ServicesOne extends React.Component {
                                     <ServiceSeparator />
                                     <ServiceList>
                                         <ServiceListElement>
-                                            Lorem ipsum dolor sit amet
+                                            We believe in liquidity regulation
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            In vitae ultricies lacus vitae
+                                            Effective asset liability management
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            Pellentesque blandit libero
+                                            Greater chance for capital gains
                                             </ServiceListElement>
                                     </ServiceList>
                                 </ServiceElement>
@@ -211,13 +211,13 @@ class ServicesOne extends React.Component {
                                     <ServiceSeparator />
                                     <ServiceList>
                                         <ServiceListElement>
-                                            Lorem ipsum dolor sit amet
+                                            Connect from anywhere in the world
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            In vitae ultricies lacus vitae
+                                            Alpha's road to 10 000 holders
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            Pellentesque blandit libero
+                                            Develop into a stable token
                                             </ServiceListElement>
                                     </ServiceList>
                                 </ServiceElement>
@@ -244,13 +244,13 @@ class ServicesOne extends React.Component {
                                     <ServiceSeparator />
                                     <ServiceList>
                                         <ServiceListElement>
-                                            Lorem ipsum dolor sit amet
+                                            We believe in community is 'KING'
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            In vitae ultricies lacus vitae
+                                            Providing the nessescary handling
                                             </ServiceListElement>
                                         <ServiceListElement>
-                                            Pellentesque blandit libero
+                                            Our community is growing everyday
                                             </ServiceListElement>
                                     </ServiceList>
                                 </ServiceElement>
@@ -277,13 +277,13 @@ class ServicesOne extends React.Component {
                                     <ServiceSeparator />
                                     <ServiceList>
                                         <ServiceListElement>
-                                            Lorem ipsum dolor sit amet
+                                            Faster transactions than Bitcoin
                                                 </ServiceListElement>
                                         <ServiceListElement>
-                                            In vitae ultricies lacus vitae
+                                            Move between exchanges faster
                                                 </ServiceListElement>
                                         <ServiceListElement>
-                                            Pellentesque blandit libero
+                                            Making $AP tokens simple to handle
                                                 </ServiceListElement>
                                     </ServiceList>
                                 </ServiceElement>
