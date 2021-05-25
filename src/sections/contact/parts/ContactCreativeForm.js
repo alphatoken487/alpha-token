@@ -12,28 +12,6 @@ class ContactOneForm extends React.Component {
             error: false
         }
     }
-
-    formSubmit() {
-        if (this.state.name === "" || this.state.email === "" || this.state.message === "") {
-            this.setState({ error: true })
-        } else {
-            this.setState({ error: false })
-        }
-        this.forceUpdate()
-    }
-
-    check(val) {
-        if (this.state.error && val === "") {
-            return false
-        } else {
-            return true
-        }
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return false;
-    }
-
     render() {
 
 
@@ -151,16 +129,16 @@ class ContactOneForm extends React.Component {
               </Heading>
                 <Separator />
                 <InputElement>
-                    <Input type="email" defaultValue={this.state.name} className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({ name: e.target.value })} />
+                    <Input type="email" className="name" placeholder="Name" />
                 </InputElement>
                 <InputElement>
-                    <Input type="text" defaultValue={this.state.email} className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" onChange={e => this.setState({ email: e.target.value })} />
+                    <Input type="text" className="email" placeholder="Email" />
                 </InputElement>
                 <InputElement>
-                    <Input type="text" defaultValue={this.state.phone} className="phone" placeholder="Phone" onChange={e => this.setState({ phone: e.target.value })} />
+                    <Input type="text" className="phone" placeholder="Phone" />
                 </InputElement>
                 <InputElement>
-                    <Textarea tpye="text" placeholder="Message" defaultValue={this.state.message} className={`message ${this.check(this.state.message) ? "" : "error"}`} onChange={e => this.setState({ message: e.target.value })} />
+                    <Textarea tpye="text" placeholder="Message" />
                 </InputElement>
                 <Submit type="submit">
                     <span>
