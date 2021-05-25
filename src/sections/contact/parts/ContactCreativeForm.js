@@ -46,7 +46,7 @@ class ContactOneForm extends React.Component {
             margin-left: 6px;
         `
 
-        const ContactForm = styled.div`
+        const ContactForm = styled.form`
             padding: 40px;
             width: 100%;
         `
@@ -145,7 +145,7 @@ class ContactOneForm extends React.Component {
         `
 
         return (
-            <ContactForm>
+            <ContactForm data-netlify="true">
                 <Heading>
                     Get In Touch
               </Heading>
