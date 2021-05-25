@@ -46,7 +46,7 @@ class ContactOneForm extends React.Component {
             margin-left: 6px;
         `
 
-        const ContactForm = styled.div`
+        const ContactForm = styled.form`
             padding: 40px;
             width: 100%;
         `
@@ -88,6 +88,24 @@ class ContactOneForm extends React.Component {
               animation: ${ErrorInputAnimation} 1s forwards;
             }
         `
+
+        const Message = styled.textarea`
+        width: 100%;
+        background-color: #111;
+        border: none;
+        border-bottom: 1px solid #444;
+        padding: 10px 5px;
+        border-radius: 0;
+        color: #fff;
+        transition: .5s;
+        &:focus {
+          border-bottom: 1px solid #04e5e5;
+          outline: none;
+        }
+        &.error {
+          animation: ${ErrorInputAnimation} 1s forwards;
+        }
+    `
 
         const Textarea = styled.textarea`
             width: 100%;
@@ -145,16 +163,17 @@ class ContactOneForm extends React.Component {
         `
 
         return (
-            <ContactForm netlify>
+            <ContactForm name="contact" netlify netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
                 <Heading>
                     Get In Touch
               </Heading>
                 <Separator />
                 <InputElement>
-                    <Input type="text" defaultValue={this.state.name} className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({ name: e.target.value })} />
+                    <Input type="text" name="name" defaultValue={this.state.name} className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({ name: e.target.value })} />
                 </InputElement>
                 <InputElement>
-                    <Input type="text" defaultValue={this.state.email} className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" onChange={e => this.setState({ email: e.target.value })} />
+                    <Message type="email" name="message" defaultValue={this.state.email} className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" onChange={e => this.setState({ email: e.target.value })} />
                 </InputElement>
                 <InputElement>
                     <Input type="text" defaultValue={this.state.phone} className="phone" placeholder="Phone" onChange={e => this.setState({ phone: e.target.value })} />
@@ -162,7 +181,7 @@ class ContactOneForm extends React.Component {
                 <InputElement>
                     <Textarea placeholder="Message" defaultValue={this.state.message} className={`message ${this.check(this.state.message) ? "" : "error"}`} onChange={e => this.setState({ message: e.target.value })} />
                 </InputElement>
-                <Submit onClick={() => this.formSubmit()}>
+                <Submit type="submit" onClick={() => this.formSubmit()}>
                     <span>
                         Submit
                 </span>
