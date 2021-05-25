@@ -57,7 +57,7 @@ class ContactOneForm extends React.Component {
             color: #fff;
         `
 
-        const InputElement = styled.div`
+        const InputElement = styled.label`
             margin: 20px 0;
         `
 
@@ -145,7 +145,7 @@ class ContactOneForm extends React.Component {
         `
 
         return (
-            <ContactForm netlify>
+            <ContactForm name="contact" method="POST" data-netlify="true">
                 <Heading>
                     Get In Touch
               </Heading>
