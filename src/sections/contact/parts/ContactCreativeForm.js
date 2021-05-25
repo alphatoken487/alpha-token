@@ -181,7 +181,7 @@ class ContactOneForm extends React.Component {
                 <InputElement>
                     <Textarea placeholder="Message" defaultValue={this.state.message} className={`message ${this.check(this.state.message) ? "" : "error"}`} onChange={e => this.setState({ message: e.target.value })} />
                 </InputElement>
-                <Submit type="submit" onClick={() => this.formSubmit()}>
+                <Submit type="submit">
                     <span>
                         Submit
                 </span>
