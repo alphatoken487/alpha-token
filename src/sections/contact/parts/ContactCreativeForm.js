@@ -145,13 +145,13 @@ class ContactOneForm extends React.Component {
         `
 
         return (
-            <ContactForm data-netlify="true">
+            <ContactForm netlify>
                 <Heading>
                     Get In Touch
               </Heading>
                 <Separator />
                 <InputElement>
-                    <Input type="text" defaultValue={this.state.name} className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({ name: e.target.value })} />
+                    <Input type="email" defaultValue={this.state.name} className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" onChange={e => this.setState({ name: e.target.value })} />
                 </InputElement>
                 <InputElement>
                     <Input type="text" defaultValue={this.state.email} className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" onChange={e => this.setState({ email: e.target.value })} />
@@ -160,9 +160,9 @@ class ContactOneForm extends React.Component {
                     <Input type="text" defaultValue={this.state.phone} className="phone" placeholder="Phone" onChange={e => this.setState({ phone: e.target.value })} />
                 </InputElement>
                 <InputElement>
-                    <Textarea placeholder="Message" defaultValue={this.state.message} className={`message ${this.check(this.state.message) ? "" : "error"}`} onChange={e => this.setState({ message: e.target.value })} />
+                    <Textarea tpye="text" placeholder="Message" defaultValue={this.state.message} className={`message ${this.check(this.state.message) ? "" : "error"}`} onChange={e => this.setState({ message: e.target.value })} />
                 </InputElement>
-                <Submit onClick={() => this.formSubmit()}>
+                <Submit type="submit" onClick={() => this.formSubmit()}>
                     <span>
                         Submit
                 </span>
