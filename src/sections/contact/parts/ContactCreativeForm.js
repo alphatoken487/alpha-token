@@ -20,7 +20,7 @@ font-family: Teko;
 color: #fff;
 `
 
-const InputElement = styled.div`
+const InputElement = styled.label`
 margin: 20px 0;
 `
 
@@ -128,23 +128,23 @@ span {
 export default function ContactOneForm() {
 
     return (
-        <ContactForm name="contact" netlify netlify-honeypot="bot-field">
+        <ContactForm name="contact" method="post">
             <input type="hidden" name="form-name" value="contact" />
             <Heading>
                 Get In Touch
               </Heading>
             <Separator />
-            <InputElement>
+            <InputElement htmlFor="name">
                 <Input type="text" name="name" className="name" placeholder="Name" />
             </InputElement>
-            <InputElement>
+            <InputElement htmlFor="email">
                 <Input type="email" name="email" className="email" placeholder="Email" />
             </InputElement>
-            <InputElement>
+            <InputElement htmlFor="phone">
                 <Input type="text" name="phone" className="phone" placeholder="Phone" />
             </InputElement>
-            <InputElement>
-                <Textarea name="message" placeholder="Message" className="message" />
+            <InputElement htmlFor="message">
+                <Textarea id="message" name="message" placeholder="Message" className="message" />
             </InputElement>
             <Submit type="submit" value="Submit message">
                 <span>
