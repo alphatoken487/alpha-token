@@ -20,7 +20,7 @@ font-family: Teko;
 color: #fff;
 `
 
-const InputElement = styled.label`
+const InputElement = styled.div`
 margin: 20px 0;
 `
 
