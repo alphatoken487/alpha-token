@@ -323,7 +323,7 @@ class Contribute extends Component {
 
                     {this.state.success ? (
 
-                        <div class="flex successfully">You successfully bought DC Coins!</div>
+                        <div class="flex successfully">You successfully bought Alpha Coins!</div>
                     ) : null}
 
                 </div>
