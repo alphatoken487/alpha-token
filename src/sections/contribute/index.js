@@ -45,7 +45,7 @@ padding-bottom: 0px;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    font-size:25px;
+    font-size:15px;
     width: 500px;
     margin: 0 auto;
     background-color:#43A047;
