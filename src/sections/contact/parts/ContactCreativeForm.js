@@ -141,10 +141,10 @@ export default function ContactOneForm() {
                 <Input type="email" name="email" className="email" placeholder="Email" />
             </InputElement>
             <InputElement>
-                <Input type="text" className="phone" placeholder="Phone" />
+                <Input type="text" name="phone" className="phone" placeholder="Phone" />
             </InputElement>
             <InputElement>
-                <Textarea placeholder="Message" className="message" />
+                <Textarea name="message" placeholder="Message" className="message" />
             </InputElement>
             <Submit type="submit" value="Submit message">
                 <span>
