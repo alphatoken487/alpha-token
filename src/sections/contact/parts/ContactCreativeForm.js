@@ -173,13 +173,13 @@ class ContactOneForm extends React.Component {
                     <Input type="text" name="name" className={`name ${this.check(this.state.name) ? "" : "error"}`} placeholder="Name" />
                 </InputElement>
                 <InputElement>
-                    <Input type="email" name="email" defaultValue={this.state.email} className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" onChange={e => this.setState({ email: e.target.value })} />
+                    <Input type="email" name="email" className={`email ${this.check(this.state.email) ? "" : "error"}`} placeholder="Email" />
                 </InputElement>
                 <InputElement>
-                    <Input type="text" defaultValue={this.state.phone} className="phone" placeholder="Phone" onChange={e => this.setState({ phone: e.target.value })} />
+                    <Input type="text" className="phone" placeholder="Phone" />
                 </InputElement>
                 <InputElement>
-                    <Textarea placeholder="Message" defaultValue={this.state.message} className={`message ${this.check(this.state.message) ? "" : "error"}`} onChange={e => this.setState({ message: e.target.value })} />
+                    <Textarea placeholder="Message" className={`message ${this.check(this.state.message) ? "" : "error"}`} />
                 </InputElement>
                 <Submit type="submit">
                     <span>
